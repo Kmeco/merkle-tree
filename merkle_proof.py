@@ -11,7 +11,15 @@ def merkle_proof(tx, merkle_tree):
 
     Return this data as a list; remember that order matters!
     """
-    #### YOUR CODE HERE
+    tx_list = []
+    for n in merkle_tree.nodes:
+        if (tx in n.leaves):
+
+
+
+    return tx_list
+
+
 
 
 
@@ -20,7 +28,8 @@ def verify_proof(tx, merkle_proof):
     that the correct block header can be retrieved by properly hashing the tx
     along with every other piece of data in the proof in the correct order
     """
-    #### YOUR CODE HERE
+    merkle_proof = [tx] + merkle_proof
+    return concat_and_hash_list(merkle_proof)
 
 
     
